@@ -8,6 +8,9 @@
       location = "group:Packages"
       name = "Packages">
       <FileRef
+         location = "group:AppEnvironment">
+      </FileRef>
+      <FileRef
          location = "group:CoreNetwork">
       </FileRef>
    </Group>
