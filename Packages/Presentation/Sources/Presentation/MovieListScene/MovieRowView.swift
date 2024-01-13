@@ -24,6 +24,7 @@ struct MovieRowView: View {
         self.selectionHandler = selectionHandler
     }
     
+    // MARK: Body
     var body: some View {
         HStack(alignment: .center, spacing: Sizes.horizontalSpacing) {
             RemoteImageView(
