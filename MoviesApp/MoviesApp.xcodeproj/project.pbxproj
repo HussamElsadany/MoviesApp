@@ -12,6 +12,7 @@
 		DC76CB8F2B521A2000FE3C91 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC76CB8E2B521A2000FE3C91 /* ViewController.swift */; };
 		DC76CB942B521A2100FE3C91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC76CB932B521A2100FE3C91 /* Assets.xcassets */; };
 		DC76CB972B521A2100FE3C91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC76CB952B521A2100FE3C91 /* LaunchScreen.storyboard */; };
+		DC76CBA02B521F3700FE3C91 /* CoreNetwork in Frameworks */ = {isa = PBXBuildFile; productRef = DC76CB9F2B521F3700FE3C91 /* CoreNetwork */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		DC76CB932B521A2100FE3C91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC76CB962B521A2100FE3C91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC76CB982B521A2100FE3C91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC76CBA22B521F7000FE3C91 /* MoviesApp.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = MoviesApp.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC76CBA02B521F3700FE3C91 /* CoreNetwork in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +43,7 @@
 			children = (
 				DC76CB892B521A2000FE3C91 /* MoviesApp */,
 				DC76CB882B521A2000FE3C91 /* Products */,
+				DC76CB9E2B521F3700FE3C91 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +58,7 @@
 		DC76CB892B521A2000FE3C91 /* MoviesApp */ = {
 			isa = PBXGroup;
 			children = (
+				DC76CBA12B521F5A00FE3C91 /* Configuration */,
 				DC76CB8A2B521A2000FE3C91 /* AppDelegate.swift */,
 				DC76CB8C2B521A2000FE3C91 /* SceneDelegate.swift */,
 				DC76CB8E2B521A2000FE3C91 /* ViewController.swift */,
@@ -62,6 +67,21 @@
 				DC76CB982B521A2100FE3C91 /* Info.plist */,
 			);
 			path = MoviesApp;
+			sourceTree = "<group>";
+		};
+		DC76CB9E2B521F3700FE3C91 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DC76CBA12B521F5A00FE3C91 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				DC76CBA22B521F7000FE3C91 /* MoviesApp.xcconfig */,
+			);
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,6 +100,9 @@
 			dependencies = (
 			);
 			name = MoviesApp;
+			packageProductDependencies = (
+				DC76CB9F2B521F3700FE3C91 /* CoreNetwork */,
+			);
 			productName = MoviesApp;
 			productReference = DC76CB872B521A2000FE3C91 /* MoviesApp.app */;
 			productType = "com.apple.product-type.application";
@@ -156,6 +179,7 @@
 /* Begin XCBuildConfiguration section */
 		DC76CB992B521A2100FE3C91 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC76CBA22B521F7000FE3C91 /* MoviesApp.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -219,6 +243,7 @@
 		};
 		DC76CB9A2B521A2100FE3C91 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC76CBA22B521F7000FE3C91 /* MoviesApp.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -285,8 +310,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,8 +336,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -349,6 +372,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DC76CB9F2B521F3700FE3C91 /* CoreNetwork */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CoreNetwork;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DC76CB7F2B521A2000FE3C91 /* Project object */;
 }

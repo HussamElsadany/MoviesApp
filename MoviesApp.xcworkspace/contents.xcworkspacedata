@@ -4,4 +4,11 @@
    <FileRef
       location = "group:MoviesApp/MoviesApp.xcodeproj">
    </FileRef>
+   <Group
+      location = "group:Packages"
+      name = "Packages">
+      <FileRef
+         location = "group:CoreNetwork">
+      </FileRef>
+   </Group>
 </Workspace>
