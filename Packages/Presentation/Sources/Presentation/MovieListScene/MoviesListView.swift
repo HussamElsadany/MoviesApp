@@ -34,6 +34,13 @@ struct MoviesListView: View {
                     )
                 }
             }
+            .alert(isPresented: $viewModel.showError, content: {
+                Alert(
+                    title: Text("Error"),
+                    message: Text("Something Wrong Happen!")
+                )
+            })
+        
     }
 }
 

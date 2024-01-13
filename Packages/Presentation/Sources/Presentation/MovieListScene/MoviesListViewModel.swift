@@ -15,7 +15,8 @@ final class MoviesListViewModel: ObservableObject {
     private let cancelBag: CancelBag
     
     // MARK: - Public properties
-    @Published var movies: [MovieAdapter] = []
+    @Published public var movies: [MovieAdapter] = []
+    @Published public var showError = false
     public var currentPage = 1
     public var isMorePagesAvailable = false
     
@@ -53,8 +54,8 @@ private extension MoviesListViewModel {
                 switch result {
                 case .success(let response):
                     handleMovies(response)
-                case .failure(let failure):
-                    break
+                case .failure:
+                    showError = true
                 }
             }
             .store(in: cancelBag)
