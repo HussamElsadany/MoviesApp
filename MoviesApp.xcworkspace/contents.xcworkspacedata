@@ -8,7 +8,10 @@
       location = "group:Packages"
       name = "Packages">
       <FileRef
-         location = "group:Presentation">
+         location = "group:AppEnvironment">
+      </FileRef>
+      <FileRef
+         location = "group:CoreNetwork">
       </FileRef>
       <FileRef
          location = "group:Data">
@@ -17,16 +20,16 @@
          location = "group:Domain">
       </FileRef>
       <FileRef
-         location = "group:MoviesAPI">
-      </FileRef>
-      <FileRef
          location = "group:Extensions">
       </FileRef>
       <FileRef
-         location = "group:AppEnvironment">
+         location = "group:ImageCache">
       </FileRef>
       <FileRef
-         location = "group:CoreNetwork">
+         location = "group:MoviesAPI">
+      </FileRef>
+      <FileRef
+         location = "group:Presentation">
       </FileRef>
    </Group>
 </Workspace>

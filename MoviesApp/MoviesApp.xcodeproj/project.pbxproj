@@ -19,6 +19,7 @@
 		DC76CBAC2B522C8100FE3C91 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = DC76CBAB2B522C8100FE3C91 /* Domain */; };
 		DC76CBAE2B5235D500FE3C91 /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = DC76CBAD2B5235D500FE3C91 /* Data */; };
 		DC76CBB62B52D0A300FE3C91 /* Presentation in Frameworks */ = {isa = PBXBuildFile; productRef = DC76CBB52B52D0A300FE3C91 /* Presentation */; };
+		DC76CBB82B52F4DC00FE3C91 /* ImageCache in Frameworks */ = {isa = PBXBuildFile; productRef = DC76CBB72B52F4DC00FE3C91 /* ImageCache */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC76CBAC2B522C8100FE3C91 /* Domain in Frameworks */,
+				DC76CBB82B52F4DC00FE3C91 /* ImageCache in Frameworks */,
 				DC76CBA62B52209C00FE3C91 /* Extensions in Frameworks */,
 				DC76CBAE2B5235D500FE3C91 /* Data in Frameworks */,
 				DC76CBA42B52209700FE3C91 /* AppEnvironment in Frameworks */,
@@ -136,6 +138,7 @@
 				DC76CBAB2B522C8100FE3C91 /* Domain */,
 				DC76CBAD2B5235D500FE3C91 /* Data */,
 				DC76CBB52B52D0A300FE3C91 /* Presentation */,
+				DC76CBB72B52F4DC00FE3C91 /* ImageCache */,
 			);
 			productName = MoviesApp;
 			productReference = DC76CB872B521A2000FE3C91 /* MoviesApp.app */;
@@ -435,6 +438,10 @@
 		DC76CBB52B52D0A300FE3C91 /* Presentation */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Presentation;
+		};
+		DC76CBB72B52F4DC00FE3C91 /* ImageCache */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ImageCache;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
