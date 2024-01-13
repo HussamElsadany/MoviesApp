@@ -7,15 +7,15 @@
 
 import Foundation
 
+// MARK: AppEnvironment
 public struct AppEnvironment {
     
-    // MARK: - Properties
+    // MARK: Properties
     private let bundle: BundleProtocol
     private let name: AppEnvironmentName
-    
     public static let current = AppEnvironment(bundle: Bundle.main)
     
-    // MARK: - Initialization
+    // MARK: Initialization
     init(bundle: BundleProtocol = Bundle.main) {
         self.bundle = bundle
         
@@ -31,6 +31,7 @@ public struct AppEnvironment {
     }
 }
 
+// MARK: AppEnvironmentProtocol
 extension AppEnvironment: AppEnvironmentProtocol {
     public var isDebug: Bool {
         name == .debug

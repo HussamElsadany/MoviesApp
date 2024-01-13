@@ -7,34 +7,63 @@
 
 import SwiftUI
 import Combine
-import CombineExtensions
+import Extensions
+import Domain
 
 final class MoviesListViewModel: ObservableObject {
     // MARK: - Private properties
     private let cancelBag: CancelBag
-    private let navigationHandler: MoviesListViewModel.NavigationActionHandler
     
     // MARK: - Public properties
-//    @State var viewState: <#Need to define ViewState type#>
+    @Published var movies: [MovieAdapter] = []
+    public var currentPage = 1
+    public var isMorePagesAvailable = false
+    
+    // MARK: UseCase
+    private let moviesUseCase: MoviesUseCaseProtocol
     
     // MARK: - Initialization
-    init(navigationHandler: @escaping MoviesListViewModel.NavigationActionHandler) {
+    init(moviesUseCase: MoviesUseCaseProtocol) {
         self.cancelBag = .init()
-        self.navigationHandler = navigationHandler
+        self.moviesUseCase = moviesUseCase
+    }
+}
+
+extension MoviesListViewModel {
+    func viewDidAppear() {
+        loadMovies()
+    }
+    
+    func loadMoreMovies() {
+        if currentPage == 3 { return }
+        currentPage += 1
+        loadMovies()
     }
 }
 
 // MARK: - Private
 private extension MoviesListViewModel {
+    func loadMovies() {
+        moviesUseCase
+            .getMovies(page: currentPage)
+            .receive(on: RunLoop.main)
+            .toResult()
+            .sink { [weak self] result in
+                guard let self else { return }
+                switch result {
+                case .success(let response):
+                    handleMovies(response)
+                case .failure(let failure):
+                    break
+                }
+            }
+            .store(in: cancelBag)
+    }
     
-}
-
-// MARK: - Navigation
-extension MoviesListViewModel {
-    typealias NavigationActionHandler = (MoviesListViewModel.NavigationAction) -> Void
-    
-    /// Defines all possible navigation actions from another screens
-    enum NavigationAction {
-        
+    func handleMovies(_ response: MoviesListEntity) {
+        isMorePagesAvailable = response.totalPages > response.page
+        movies.append(contentsOf: response.results.compactMap {
+            MovieAdapter($0)
+        })
     }
 }

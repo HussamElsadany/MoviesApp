@@ -12,6 +12,8 @@
 		<string>$(API_VERSION)</string>
 		<key>Configuration</key>
 		<string>$(CONFIGURATION)</string>
+		<key>API_IMAGES_BASE_URL</key>
+		<string>$(API_IMAGES_BASE_URL)</string>
 	</dict>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import Domain
 
-struct MoviesListBuilder {
-    private init() {}
+public struct MoviesListBuilder {
     
-    static func build(navigationHandler: @escaping MoviesListViewModel.NavigationActionHandler) -> UIViewController {
-        let viewModel = MoviesListViewModel(navigationHandler: navigationHandler)
+    private init() { }
+    
+    public static func build(
+        moviesUseCase: MoviesUseCaseProtocol
+    ) -> UIViewController {
+        let viewModel = MoviesListViewModel(moviesUseCase: moviesUseCase)
         let view = MoviesListView(viewModel: viewModel)
         return UIHostingController(rootView: view)
     }
