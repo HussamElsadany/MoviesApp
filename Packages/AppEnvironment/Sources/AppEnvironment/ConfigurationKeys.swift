@@ -10,6 +10,6 @@ public enum EnvironmentConfigurationKeys: String {
     case configuration  = "Configuration"
     
     case apiBASEURL = "API_BASE_URL"
-    case apiVersion = "SERVER_STATUS"
-    case apiKey     = "ORDERS_SERVICE"
+    case apiVersion = "API_VERSION"
+    case apiKey     = "API_KEY"
 }
