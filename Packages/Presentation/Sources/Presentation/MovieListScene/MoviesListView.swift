@@ -10,10 +10,10 @@ import SwiftUI
 // MARK: - MoviesListView
 struct MoviesListView: View {
     
-    // MARK: - Properties
+    // MARK: Properties
     @ObservedObject private var viewModel: MoviesListViewModel
     
-    // MARK: - Initialization
+    // MARK: Initialization
     init(viewModel: MoviesListViewModel) {
         self.viewModel = viewModel
     }
@@ -35,8 +35,11 @@ struct MoviesListView: View {
                 }
             }
     }
+}
+
+// MARK: - List
+extension MoviesListView {
     
-    // MARK: List
     @ViewBuilder
     var contentView: some View {
         List {
