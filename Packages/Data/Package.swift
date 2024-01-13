@@ -5,6 +5,9 @@ import PackageDescription
 
 let package = Package(
     name: "Data",
+    platforms: [
+        .iOS(.v17)
+    ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
@@ -14,14 +17,15 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         .package(path: "../MoviesAPI"),
-        .package(path: "../Domain")
+        .package(path: "../Domain"),
+        .package(path: "../CoreNetwork")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "Data",
-            dependencies: ["MoviesAPI", "Domain"]),
+            dependencies: ["MoviesAPI", "Domain", "CoreNetwork"]),
         .testTarget(
             name: "DataTests",
             dependencies: ["Data"]),
