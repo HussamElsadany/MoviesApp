@@ -1,0 +1,13 @@
+//
+//  MoviesApp.xcconfig
+//  MoviesApp
+//
+//  Created by Hussam Elsadany on 13/01/2024.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+API_BASE_URL = api.themoviedb.org
+API_VERSION  = 3
+API_KEY      = 6d3ff79a468b96acedaf9e5a54b5b752
