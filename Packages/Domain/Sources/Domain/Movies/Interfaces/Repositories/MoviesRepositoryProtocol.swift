@@ -9,6 +9,7 @@ import Foundation
 import Combine
 
 public protocol MoviesRepositoryProtocol {
+    
     /// Retrieves a list of movies from a remote data source.
     ///
     /// `GET discover/movie`
