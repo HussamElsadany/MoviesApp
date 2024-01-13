@@ -44,7 +44,7 @@ extension AppEnvironment: AppEnvironmentProtocol {
         _ key: EnvironmentConfigurationKeys
     ) -> T {
         guard let value = bundle.getConfigValue(key: key.rawValue) as? T else {
-            fatalError("Environment. can't get value from configuration for \(key.rawValue)")
+            fatalError("\(#file). can't get value from configuration for \(key.rawValue)")
         }
         return value
     }
