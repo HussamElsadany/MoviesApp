@@ -16,6 +16,7 @@
 		DC76CBA42B52209700FE3C91 /* AppEnvironment in Frameworks */ = {isa = PBXBuildFile; productRef = DC76CBA32B52209700FE3C91 /* AppEnvironment */; };
 		DC76CBA62B52209C00FE3C91 /* Extensions in Frameworks */ = {isa = PBXBuildFile; productRef = DC76CBA52B52209C00FE3C91 /* Extensions */; };
 		DC76CBAA2B5228C000FE3C91 /* MoviesAPI in Frameworks */ = {isa = PBXBuildFile; productRef = DC76CBA92B5228C000FE3C91 /* MoviesAPI */; };
+		DC76CBAC2B522C8100FE3C91 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = DC76CBAB2B522C8100FE3C91 /* Domain */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC76CBAC2B522C8100FE3C91 /* Domain in Frameworks */,
 				DC76CBA62B52209C00FE3C91 /* Extensions in Frameworks */,
 				DC76CBA42B52209700FE3C91 /* AppEnvironment in Frameworks */,
 				DC76CBAA2B5228C000FE3C91 /* MoviesAPI in Frameworks */,
@@ -127,6 +129,7 @@
 				DC76CBA32B52209700FE3C91 /* AppEnvironment */,
 				DC76CBA52B52209C00FE3C91 /* Extensions */,
 				DC76CBA92B5228C000FE3C91 /* MoviesAPI */,
+				DC76CBAB2B522C8100FE3C91 /* Domain */,
 			);
 			productName = MoviesApp;
 			productReference = DC76CB872B521A2000FE3C91 /* MoviesApp.app */;
@@ -414,6 +417,10 @@
 		DC76CBA92B5228C000FE3C91 /* MoviesAPI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MoviesAPI;
+		};
+		DC76CBAB2B522C8100FE3C91 /* Domain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Domain;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

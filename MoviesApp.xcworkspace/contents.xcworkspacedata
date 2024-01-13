@@ -8,6 +8,9 @@
       location = "group:Packages"
       name = "Packages">
       <FileRef
+         location = "group:Domain">
+      </FileRef>
+      <FileRef
          location = "group:MoviesAPI">
       </FileRef>
       <FileRef
