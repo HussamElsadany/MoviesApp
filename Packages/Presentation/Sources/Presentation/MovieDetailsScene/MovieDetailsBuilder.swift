@@ -11,9 +11,14 @@ public struct MovieDetailsBuilder {
     
     private init() { }
     
-    public static func build() -> UIViewController {
-        let viewModel = MovieDetailsViewModel()
-        let view = MovieDetailsViewController()
+    public static func build(
+        movieAdapter: MovieAdapter
+    ) -> UIViewController {
+        let view = MovieDetailsViewController.init(
+            nibName: MovieDetailsViewController.Identifier,
+            bundle: Bundle.module
+        )
+        view.movieAdapter = movieAdapter
         return view
     }
 }

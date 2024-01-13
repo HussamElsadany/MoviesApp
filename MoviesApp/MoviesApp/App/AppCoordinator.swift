@@ -51,7 +51,7 @@ final class AppCoordinator {
 
 private extension AppCoordinator {
     func openMovieDetails(_ movieAdapter: MovieAdapter) {
-        let view = MovieDetailsBuilder.build()
+        let view = MovieDetailsBuilder.build(movieAdapter: movieAdapter)
         self.rootController.pushViewController(view, animated: true)
     }
 }

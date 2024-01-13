@@ -16,7 +16,8 @@ public struct MovieAdapter: Identifiable, Hashable {
     public let id: Int
     public let title: String
     public let overview: String
-    public let posterPath: String
+    public let posterTiny: String
+    public let posterOriginal: String
 }
 
 // MARK: - Initialization from entities
@@ -29,7 +30,18 @@ extension MovieAdapter {
         self.title = movie.title
         self.overview = movie.overview
         // TODO: Modify this logic to read BaseImageURL from injected object from AppEnvironment.
-        self.posterPath = "\(CommonMovieService.baseImagesURL)/\(MovieImageSize.PosterSize.w154)/\(movie.posterPath ?? "")"
+        self.posterTiny = Self.generatePosterLink(
+            path: movie.posterPath ?? "",
+            size: .w154
+        )
+        self.posterOriginal = Self.generatePosterLink(
+            path: movie.posterPath ?? "",
+            size: .original
+        )
+    }
+    
+    private static func generatePosterLink(path: String, size: MovieImageSize) -> String {
+        return "\(CommonMovieService.baseImagesURL)/\(size)/\(path)"
     }
 }
 
@@ -40,7 +52,8 @@ extension MovieAdapter {
             id: 1,
             title: "Movie Name",
             overview: "Movie OverView, Movie OverView, Movie OverView, Movie OverView, Movie OverView.",
-            posterPath: "Image Poster Path URL"
+            posterTiny: "Image Poster Path URL",
+            posterOriginal: "Image Poster Path URL"
         )
     }
 }

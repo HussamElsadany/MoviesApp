@@ -28,7 +28,7 @@ struct MovieRowView: View {
         HStack(alignment: .center, spacing: Sizes.horizontalSpacing) {
             RemoteImageView(
                 resource: RemoteImageResource(
-                    path: movie.posterPath,
+                    path: movie.posterTiny,
                     placeholder: nil
                 )
             )
