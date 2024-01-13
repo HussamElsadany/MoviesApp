@@ -58,7 +58,9 @@ extension MoviesListView {
     var contentView: some View {
         List {
             ForEach(viewModel.movies) { movie in
-                MovieRowView(movie: movie)
+                MovieRowView(movie: movie) { selectedMovie in
+                    viewModel.handleAction(.openMovieDetails(selectedMovie))
+                }
             }
             if viewModel.isMorePagesAvailable {
                 lastRowView

@@ -19,6 +19,7 @@
 		DC76CBAE2B5235D500FE3C91 /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = DC76CBAD2B5235D500FE3C91 /* Data */; };
 		DC76CBB62B52D0A300FE3C91 /* Presentation in Frameworks */ = {isa = PBXBuildFile; productRef = DC76CBB52B52D0A300FE3C91 /* Presentation */; };
 		DC76CBB82B52F4DC00FE3C91 /* ImageCache in Frameworks */ = {isa = PBXBuildFile; productRef = DC76CBB72B52F4DC00FE3C91 /* ImageCache */; };
+		DC76CBBA2B531E9200FE3C91 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC76CBB92B531E9200FE3C91 /* AppCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		DC76CB962B521A2100FE3C91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC76CB982B521A2100FE3C91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC76CBA22B521F7000FE3C91 /* MoviesApp.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = MoviesApp.xcconfig; sourceTree = "<group>"; };
+		DC76CBB92B531E9200FE3C91 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			children = (
 				DC76CB8A2B521A2000FE3C91 /* AppDelegate.swift */,
 				DC76CB8C2B521A2000FE3C91 /* SceneDelegate.swift */,
+				DC76CBB92B531E9200FE3C91 /* AppCoordinator.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC76CBBA2B531E9200FE3C91 /* AppCoordinator.swift in Sources */,
 				DC76CB8B2B521A2000FE3C91 /* AppDelegate.swift in Sources */,
 				DC76CB8D2B521A2000FE3C91 /* SceneDelegate.swift in Sources */,
 			);

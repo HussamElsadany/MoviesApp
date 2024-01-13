@@ -8,9 +8,21 @@
 import SwiftUI
 import ImageCache
 
+// MARK: - MovieRowView
 struct MovieRowView: View {
     
-    let movie: MovieAdapter
+    // MARK: Private Properties
+    private let movie: MovieAdapter
+    private let selectionHandler: (MovieAdapter) -> Void
+
+    // MARK: Initialization
+    public init(
+        movie: MovieAdapter,
+        selectionHandler: @escaping (MovieAdapter) -> Void
+    ) {
+        self.movie = movie
+        self.selectionHandler = selectionHandler
+    }
     
     var body: some View {
         HStack(alignment: .center, spacing: Sizes.horizontalSpacing) {
@@ -34,9 +46,13 @@ struct MovieRowView: View {
             }
         }
         .padding(.vertical, Sizes.viewPadding)
+        .onTapGesture {
+            selectionHandler(movie)
+        }
     }
 }
 
+// MARK: - Sizes
 private extension MovieRowView {
     struct Sizes {
         static let horizontalSpacing: CGFloat = 16

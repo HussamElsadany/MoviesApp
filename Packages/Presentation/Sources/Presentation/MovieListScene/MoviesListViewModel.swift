@@ -10,25 +10,32 @@ import Combine
 import Extensions
 import Domain
 
-final class MoviesListViewModel: ObservableObject {
-    // MARK: - Private properties
-    private let cancelBag: CancelBag
+// MARK: - MoviesListViewModel
+public final class MoviesListViewModel: ObservableObject {
     
-    // MARK: - Public properties
-    @Published public var movies: [MovieAdapter] = []
-    @Published public var showError = false
-    @Published public var showingSortingOption = false
-    public var currentSort: MoviesSortingType = .popularity
-    public var currentPage = 1
+    // MARK: Private properties
+    private let cancelBag: CancelBag
+    private var currentPage = 1
+    private var currentSort: MoviesSortingType = .popularity
+    
+    // MARK: Public properties
+    @Published var movies: [MovieAdapter] = []
+    @Published var showError = false
+    @Published var showingSortingOption = false
     public var isMorePagesAvailable = false
     
     // MARK: UseCases
     private let moviesUseCase: MoviesUseCaseProtocol
+    private let navigationHandler: NavigationActionHandler
     
-    // MARK: - Initialization
-    init(moviesUseCase: MoviesUseCaseProtocol) {
+    // MARK: Initialization
+    init(
+        moviesUseCase: MoviesUseCaseProtocol,
+        navigationHandler: @escaping NavigationActionHandler
+    ) {
         self.cancelBag = .init()
         self.moviesUseCase = moviesUseCase
+        self.navigationHandler = navigationHandler
     }
 }
 
@@ -47,27 +54,32 @@ extension MoviesListViewModel {
     }
 }
 
+// MARK: - Actions
 extension MoviesListViewModel {
     enum Actions {
         case sort(MoviesSortingType)
-        case openMovieDetails
+        case openMovieDetails(MovieAdapter)
     }
     
     func handleAction(_ action: Actions) {
         switch action {
         case .sort(let value):
             handleSortingAction(value)
-        case .openMovieDetails: 
-            break
+        case .openMovieDetails(let adapter):
+            handleOpenMovieDetailsAction(adapter)
         }
     }
     
-    func handleSortingAction(_ sort: MoviesSortingType) {
+    private func handleSortingAction(_ sort: MoviesSortingType) {
         guard sort != currentSort else { return }
         movies.removeAll()
         currentSort = sort
         currentPage = 1
         loadMovies()
+    }
+    
+    private func handleOpenMovieDetailsAction(_ adapter: MovieAdapter) {
+        navigationHandler(.openMovieDetails(adapter))
     }
 }
 
@@ -98,5 +110,15 @@ private extension MoviesListViewModel {
         movies.append(contentsOf: response.results.compactMap {
             MovieAdapter($0)
         })
+    }
+}
+
+// MARK: - Navigation
+extension MoviesListViewModel {
+    
+    public typealias NavigationActionHandler = (MoviesListViewModel.NavigationAction) -> Void
+    
+    public enum NavigationAction {
+        case openMovieDetails(MovieAdapter)
     }
 }

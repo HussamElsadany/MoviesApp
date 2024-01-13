@@ -9,14 +9,14 @@ import Foundation
 import Domain
 import MoviesAPI
 
-struct MovieAdapter: Identifiable {
+public struct MovieAdapter: Identifiable, Hashable {
     
-    typealias ID = Int
+    public typealias ID = Int
     
-    let id: Int
-    let title: String
-    let overview: String
-    let posterPath: String
+    public let id: Int
+    public let title: String
+    public let overview: String
+    public let posterPath: String
 }
 
 // MARK: - Initialization from entities
