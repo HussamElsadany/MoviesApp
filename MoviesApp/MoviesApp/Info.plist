@@ -2,6 +2,17 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>ConfigurationKeys</key>
+	<dict>
+		<key>API_BASE_URL</key>
+		<string>$(API_BASE_URL)</string>
+		<key>API_KEY</key>
+		<string>$(API_KEY)</string>
+		<key>API_VERSION</key>
+		<string>$(API_VERSION)</string>
+		<key>Configuration</key>
+		<string>$(CONFIGURATION)</string>
+	</dict>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -17,17 +28,6 @@
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
 				</dict>
 			</array>
-		</dict>
-		<key>ConfigurationKeys</key>
-		<dict>
-			<key>API_BASE_URL</key>
-			<string>$(API_BASE_URL)</string>
-			<key>API_KEY</key>
-			<string>$(API_KEY)</string>
-			<key>API_VERSION</key>
-			<string>$(API_VERSION)</string>
-			<key>Configuration</key>
-			<string>$(CONFIGURATION)</string>
 		</dict>
 	</dict>
 </dict>
