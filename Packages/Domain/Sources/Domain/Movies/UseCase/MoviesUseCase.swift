@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 
+// MARK: - MoviesUseCaseProtocol
 public protocol MoviesUseCaseProtocol {
     /// Retrieves a list of movies from a remote data source.
     ///
@@ -31,15 +32,19 @@ public protocol MoviesUseCaseProtocol {
 
 }
 
+// MARK: - MoviesUseCase
 public final class MoviesUseCase {
     
+    // MARK: Private Properties
     private let repository: MoviesRepositoryProtocol
     
+    // MARK: Initialization
     public init(repository: MoviesRepositoryProtocol) {
         self.repository = repository
     }
 }
 
+// MARK: - MoviesUseCaseProtocol
 extension MoviesUseCase: MoviesUseCaseProtocol {
     public func getMovies(
         page: Int
