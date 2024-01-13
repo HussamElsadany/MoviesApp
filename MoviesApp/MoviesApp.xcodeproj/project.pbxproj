@@ -15,6 +15,7 @@
 		DC76CBA02B521F3700FE3C91 /* CoreNetwork in Frameworks */ = {isa = PBXBuildFile; productRef = DC76CB9F2B521F3700FE3C91 /* CoreNetwork */; };
 		DC76CBA42B52209700FE3C91 /* AppEnvironment in Frameworks */ = {isa = PBXBuildFile; productRef = DC76CBA32B52209700FE3C91 /* AppEnvironment */; };
 		DC76CBA62B52209C00FE3C91 /* Extensions in Frameworks */ = {isa = PBXBuildFile; productRef = DC76CBA52B52209C00FE3C91 /* Extensions */; };
+		DC76CBAA2B5228C000FE3C91 /* MoviesAPI in Frameworks */ = {isa = PBXBuildFile; productRef = DC76CBA92B5228C000FE3C91 /* MoviesAPI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 			files = (
 				DC76CBA62B52209C00FE3C91 /* Extensions in Frameworks */,
 				DC76CBA42B52209700FE3C91 /* AppEnvironment in Frameworks */,
+				DC76CBAA2B5228C000FE3C91 /* MoviesAPI in Frameworks */,
 				DC76CBA02B521F3700FE3C91 /* CoreNetwork in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -62,13 +64,11 @@
 		DC76CB892B521A2000FE3C91 /* MoviesApp */ = {
 			isa = PBXGroup;
 			children = (
-				DC76CB8A2B521A2000FE3C91 /* AppDelegate.swift */,
-				DC76CB8C2B521A2000FE3C91 /* SceneDelegate.swift */,
-				DC76CB8E2B521A2000FE3C91 /* ViewController.swift */,
-				DC76CB932B521A2100FE3C91 /* Assets.xcassets */,
-				DC76CB952B521A2100FE3C91 /* LaunchScreen.storyboard */,
-				DC76CBA12B521F5A00FE3C91 /* Configuration */,
 				DC76CB982B521A2100FE3C91 /* Info.plist */,
+				DC76CBA82B5220DA00FE3C91 /* App */,
+				DC76CB8E2B521A2000FE3C91 /* ViewController.swift */,
+				DC76CBA12B521F5A00FE3C91 /* Configuration */,
+				DC76CBA72B5220BE00FE3C91 /* Resources */,
 			);
 			path = MoviesApp;
 			sourceTree = "<group>";
@@ -86,6 +86,24 @@
 				DC76CBA22B521F7000FE3C91 /* MoviesApp.xcconfig */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		DC76CBA72B5220BE00FE3C91 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DC76CB952B521A2100FE3C91 /* LaunchScreen.storyboard */,
+				DC76CB932B521A2100FE3C91 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DC76CBA82B5220DA00FE3C91 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				DC76CB8A2B521A2000FE3C91 /* AppDelegate.swift */,
+				DC76CB8C2B521A2000FE3C91 /* SceneDelegate.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -108,6 +126,7 @@
 				DC76CB9F2B521F3700FE3C91 /* CoreNetwork */,
 				DC76CBA32B52209700FE3C91 /* AppEnvironment */,
 				DC76CBA52B52209C00FE3C91 /* Extensions */,
+				DC76CBA92B5228C000FE3C91 /* MoviesAPI */,
 			);
 			productName = MoviesApp;
 			productReference = DC76CB872B521A2000FE3C91 /* MoviesApp.app */;
@@ -391,6 +410,10 @@
 		DC76CBA52B52209C00FE3C91 /* Extensions */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Extensions;
+		};
+		DC76CBA92B5228C000FE3C91 /* MoviesAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MoviesAPI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
