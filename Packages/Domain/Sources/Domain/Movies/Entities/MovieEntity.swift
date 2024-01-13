@@ -16,7 +16,7 @@ public struct MovieEntity: Decodable {
     public let originalTitle: String
     public let overview: String
     public let popularity: Double
-    public let posterPath: String
+    public let posterPath: String?
     public let releaseDate: String?
     public let title: String
     public let video: Bool

@@ -16,10 +16,11 @@ public protocol MoviesRepositoryProtocol {
     ///
     /// - Parameters:
     ///   - page: The page number to retrieve from the remote data source.
-    ///
+    ///   - sortType: The sorting type to apply to the movie list.
     /// - Returns: A Combine `AnyPublisher` that emits a `MoviesListEntity` or an error.
     func getMovies(
-        page: Int
+        page: Int,
+        sortType: MoviesSortingType
     ) -> AnyPublisher<MoviesListEntity, Error>
     
     /// Retrieves a list of movies from a remote data source.

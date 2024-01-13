@@ -14,10 +14,11 @@ public protocol MoviesUseCaseProtocol {
     ///
     /// - Parameters:
     ///   - page: The page number to retrieve from the remote data source.
-    ///
+    ///   - sortType: The sorting type to apply to the movie list.
     /// - Returns: A Combine `AnyPublisher` that emits a `MoviesListEntity` or an error.
     func getMovies(
-        page: Int
+        page: Int,
+        sortType: MoviesSortingType
     ) -> AnyPublisher<MoviesListEntity, Error>
     
     /// Retrieves detailed information for a specific movie.
@@ -47,9 +48,11 @@ public final class MoviesUseCase {
 // MARK: - MoviesUseCaseProtocol
 extension MoviesUseCase: MoviesUseCaseProtocol {
     public func getMovies(
-        page: Int
+        page: Int,
+        sortType: MoviesSortingType
     ) -> AnyPublisher<MoviesListEntity, Error> {
-        repository.getMovies(page: page)
+        repository.getMovies(page: page, 
+                             sortType: sortType)
     }
     
     public func getMovieDetails(

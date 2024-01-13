@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		DC76CB8B2B521A2000FE3C91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC76CB8A2B521A2000FE3C91 /* AppDelegate.swift */; };
 		DC76CB8D2B521A2000FE3C91 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC76CB8C2B521A2000FE3C91 /* SceneDelegate.swift */; };
-		DC76CB8F2B521A2000FE3C91 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC76CB8E2B521A2000FE3C91 /* ViewController.swift */; };
 		DC76CB942B521A2100FE3C91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC76CB932B521A2100FE3C91 /* Assets.xcassets */; };
 		DC76CB972B521A2100FE3C91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC76CB952B521A2100FE3C91 /* LaunchScreen.storyboard */; };
 		DC76CBA02B521F3700FE3C91 /* CoreNetwork in Frameworks */ = {isa = PBXBuildFile; productRef = DC76CB9F2B521F3700FE3C91 /* CoreNetwork */; };
@@ -26,7 +25,6 @@
 		DC76CB872B521A2000FE3C91 /* MoviesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoviesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC76CB8A2B521A2000FE3C91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC76CB8C2B521A2000FE3C91 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DC76CB8E2B521A2000FE3C91 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DC76CB932B521A2100FE3C91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC76CB962B521A2100FE3C91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC76CB982B521A2100FE3C91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -74,7 +72,6 @@
 			children = (
 				DC76CB982B521A2100FE3C91 /* Info.plist */,
 				DC76CBA82B5220DA00FE3C91 /* App */,
-				DC76CB8E2B521A2000FE3C91 /* ViewController.swift */,
 				DC76CBA12B521F5A00FE3C91 /* Configuration */,
 				DC76CBA72B5220BE00FE3C91 /* Resources */,
 			);
@@ -194,7 +191,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC76CB8F2B521A2000FE3C91 /* ViewController.swift in Sources */,
 				DC76CB8B2B521A2000FE3C91 /* AppDelegate.swift in Sources */,
 				DC76CB8D2B521A2000FE3C91 /* SceneDelegate.swift in Sources */,
 			);

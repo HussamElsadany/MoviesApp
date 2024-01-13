@@ -17,10 +17,12 @@ final class MoviesListViewModel: ObservableObject {
     // MARK: - Public properties
     @Published public var movies: [MovieAdapter] = []
     @Published public var showError = false
+    @Published public var showingSortingOption = false
+    public var currentSort: MoviesSortingType = .popularity
     public var currentPage = 1
     public var isMorePagesAvailable = false
     
-    // MARK: UseCase
+    // MARK: UseCases
     private let moviesUseCase: MoviesUseCaseProtocol
     
     // MARK: - Initialization
@@ -36,8 +38,35 @@ extension MoviesListViewModel {
     }
     
     func loadMoreMovies() {
-        if currentPage == 3 { return }
         currentPage += 1
+        loadMovies()
+    }
+    
+    func loadAllSortTypes() -> [MoviesSortingType] {
+        return MoviesSortingType.allCases
+    }
+}
+
+extension MoviesListViewModel {
+    enum Actions {
+        case sort(MoviesSortingType)
+        case openMovieDetails
+    }
+    
+    func handleAction(_ action: Actions) {
+        switch action {
+        case .sort(let value):
+            handleSortingAction(value)
+        case .openMovieDetails: 
+            break
+        }
+    }
+    
+    func handleSortingAction(_ sort: MoviesSortingType) {
+        guard sort != currentSort else { return }
+        movies.removeAll()
+        currentSort = sort
+        currentPage = 1
         loadMovies()
     }
 }
@@ -46,7 +75,10 @@ extension MoviesListViewModel {
 private extension MoviesListViewModel {
     func loadMovies() {
         moviesUseCase
-            .getMovies(page: currentPage)
+            .getMovies(
+                page: currentPage,
+                sortType: currentSort
+            )
             .receive(on: RunLoop.main)
             .toResult()
             .sink { [weak self] result in

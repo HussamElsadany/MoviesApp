@@ -26,12 +26,19 @@ struct MoviesListView: View {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(
                         action: {
-                            
+                            viewModel.showingSortingOption = true
                         },
                         label: {
                             Image(systemName: "arrow.up.arrow.down")
                         }
                     )
+                    .confirmationDialog("Sort Type", isPresented: $viewModel.showingSortingOption, titleVisibility: .visible) {
+                        ForEach(viewModel.loadAllSortTypes(), id: \.self) { sort in
+                            Button(sort.rawValue) {
+                                viewModel.handleAction(.sort(sort))
+                            }
+                        }
+                    }
                 }
             }
             .alert(isPresented: $viewModel.showError, content: {

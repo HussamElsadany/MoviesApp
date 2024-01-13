@@ -9,7 +9,7 @@ import Foundation
 import CoreNetwork
 
 public enum MoviesEndpoint {
-    case getMovies(page: Int)
+    case getMovies(page: Int, sortType: String)
     case getMoviesDetails(movieId: Int)
 }
 
@@ -41,11 +41,13 @@ extension MoviesEndpoint: HTTPEndpoint {
     
     public var queryParameters: [URLQueryItem]? {
         switch self {
-        case .getMovies(let page):
-            let pageKeyItem = URLQueryItem(name: "page", value: "\(page)")
-            var queryParameters = CommonMovieService.queryItems
-            queryParameters.append(pageKeyItem)
-            return queryParameters
+        case .getMovies(let page, let sortType):
+            var customeQueries = [
+                URLQueryItem(name: "page", value: "\(page)"),
+                URLQueryItem(name: "sort_by", value: sortType)
+            ]
+            customeQueries.append(contentsOf: CommonMovieService.queryItems)
+            return customeQueries
         case .getMoviesDetails:
             return CommonMovieService.queryItems
         }

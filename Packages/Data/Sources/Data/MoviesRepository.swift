@@ -26,11 +26,15 @@ public final class MoviesRepository {
 // MARK: - MoviesRepositoryProtocol
 extension MoviesRepository: MoviesRepositoryProtocol {
     public func getMovies(
-        page: Int
+        page: Int,
+        sortType: MoviesSortingType
     ) -> AnyPublisher<MoviesListEntity, Error> {
         netWork.send(
             MoviesListEntity.self,
-            endpoint: MoviesEndpoint.getMovies(page: page)
+            endpoint: MoviesEndpoint.getMovies(
+                page: page,
+                sortType: sortType.apiValue
+            )
         )
     }
     

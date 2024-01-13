@@ -29,7 +29,7 @@ extension MovieAdapter {
         self.title = movie.title
         self.overview = movie.overview
         // TODO: Modify this logic to read BaseImageURL from injected object from AppEnvironment.
-        self.posterPath = "\(CommonMovieService.baseImagesURL)/\(MovieImageSize.PosterSize.w154)/\(movie.posterPath)"
+        self.posterPath = "\(CommonMovieService.baseImagesURL)/\(MovieImageSize.PosterSize.w154)/\(movie.posterPath ?? "")"
     }
 }
 
