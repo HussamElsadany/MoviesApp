@@ -21,9 +21,9 @@ extension MoviesEndpoint: HTTPEndpoint {
     public var path: String {
         switch self {
         case .getMovies:
-            return "discover/movie"
+            return "/discover/movie"
         case .getMoviesDetails(let movieId):
-            return "discover/movie/\(movieId)"
+            return "/movie/\(movieId)"
         }
     }
     
