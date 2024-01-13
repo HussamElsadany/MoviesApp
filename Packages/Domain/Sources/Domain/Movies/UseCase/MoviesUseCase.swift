@@ -1,5 +1,5 @@
 //
-//  MoviesRepositoryProtocol.swift
+//  MoviesUseCase.swift
 //
 //
 //  Created by Hussam Elsadany on 13/01/2024.
@@ -8,10 +8,8 @@
 import Foundation
 import Combine
 
-public protocol MoviesRepositoryProtocol {
+public protocol MoviesUseCaseProtocol {
     /// Retrieves a list of movies from a remote data source.
-    ///
-    /// `GET discover/movie`
     ///
     /// - Parameters:
     ///   - page: The page number to retrieve from the remote data source.
@@ -21,9 +19,7 @@ public protocol MoviesRepositoryProtocol {
         page: Int
     ) -> AnyPublisher<MoviesListEntity, Error>
     
-    /// Retrieves a list of movies from a remote data source.
-    ///
-    /// `GET movie/movie_id`
+    /// Retrieves detailed information for a specific movie.
     ///
     /// - Parameters:
     ///   - movieId: The unique identifier of the movie to retrieve details for.
@@ -32,4 +28,28 @@ public protocol MoviesRepositoryProtocol {
     func getMovieDetails(
         movieId: Int
     ) -> AnyPublisher<MovieEntity, Error>
+
+}
+
+public final class MoviesUseCase {
+    
+    private let repository: MoviesRepositoryProtocol
+    
+    public init(repository: MoviesRepositoryProtocol) {
+        self.repository = repository
+    }
+}
+
+extension MoviesUseCase: MoviesUseCaseProtocol {
+    public func getMovies(
+        page: Int
+    ) -> AnyPublisher<MoviesListEntity, Error> {
+        repository.getMovies(page: page)
+    }
+    
+    public func getMovieDetails(
+        movieId: Int
+    ) -> AnyPublisher<MovieEntity, Error> {
+        repository.getMovieDetails(movieId: movieId)
+    }
 }
