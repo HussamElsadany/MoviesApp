@@ -13,6 +13,8 @@
 		DC76CB942B521A2100FE3C91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC76CB932B521A2100FE3C91 /* Assets.xcassets */; };
 		DC76CB972B521A2100FE3C91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC76CB952B521A2100FE3C91 /* LaunchScreen.storyboard */; };
 		DC76CBA02B521F3700FE3C91 /* CoreNetwork in Frameworks */ = {isa = PBXBuildFile; productRef = DC76CB9F2B521F3700FE3C91 /* CoreNetwork */; };
+		DC76CBA42B52209700FE3C91 /* AppEnvironment in Frameworks */ = {isa = PBXBuildFile; productRef = DC76CBA32B52209700FE3C91 /* AppEnvironment */; };
+		DC76CBA62B52209C00FE3C91 /* Extensions in Frameworks */ = {isa = PBXBuildFile; productRef = DC76CBA52B52209C00FE3C91 /* Extensions */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC76CBA62B52209C00FE3C91 /* Extensions in Frameworks */,
+				DC76CBA42B52209700FE3C91 /* AppEnvironment in Frameworks */,
 				DC76CBA02B521F3700FE3C91 /* CoreNetwork in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -58,12 +62,12 @@
 		DC76CB892B521A2000FE3C91 /* MoviesApp */ = {
 			isa = PBXGroup;
 			children = (
-				DC76CBA12B521F5A00FE3C91 /* Configuration */,
 				DC76CB8A2B521A2000FE3C91 /* AppDelegate.swift */,
 				DC76CB8C2B521A2000FE3C91 /* SceneDelegate.swift */,
 				DC76CB8E2B521A2000FE3C91 /* ViewController.swift */,
 				DC76CB932B521A2100FE3C91 /* Assets.xcassets */,
 				DC76CB952B521A2100FE3C91 /* LaunchScreen.storyboard */,
+				DC76CBA12B521F5A00FE3C91 /* Configuration */,
 				DC76CB982B521A2100FE3C91 /* Info.plist */,
 			);
 			path = MoviesApp;
@@ -102,6 +106,8 @@
 			name = MoviesApp;
 			packageProductDependencies = (
 				DC76CB9F2B521F3700FE3C91 /* CoreNetwork */,
+				DC76CBA32B52209700FE3C91 /* AppEnvironment */,
+				DC76CBA52B52209C00FE3C91 /* Extensions */,
 			);
 			productName = MoviesApp;
 			productReference = DC76CB872B521A2000FE3C91 /* MoviesApp.app */;
@@ -377,6 +383,14 @@
 		DC76CB9F2B521F3700FE3C91 /* CoreNetwork */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = CoreNetwork;
+		};
+		DC76CBA32B52209700FE3C91 /* AppEnvironment */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AppEnvironment;
+		};
+		DC76CBA52B52209C00FE3C91 /* Extensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Extensions;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
