@@ -29,6 +29,7 @@ final class AppCoordinator {
     
     // MARK: Start The Coordinator.
     func start() {
+        // TODO: Use DIContainer for network, useCases and repos.
         let network = NetworkClient()
         let repo = MoviesRepository(netWork: network)
         let useCase = MoviesUseCase(repository: repo)
