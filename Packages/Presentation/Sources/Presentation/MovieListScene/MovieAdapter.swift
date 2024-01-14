@@ -7,7 +7,6 @@
 
 import Foundation
 import Domain
-import MoviesAPI
 
 public struct MovieAdapter: Identifiable, Hashable {
     
@@ -25,23 +24,32 @@ extension MovieAdapter {
     
     /// /// Initialize adapter object from given movie entity
     /// - Parameter movie: base entity
-    init(_ movie: MovieEntity) {
+    public init(
+        _ movie: MovieEntity,
+        baseImageURL: String
+    ) {
         self.id = movie.id
         self.title = movie.title
         self.overview = movie.overview
-        // TODO: Modify this logic to read BaseImageURL from injected object from AppEnvironment.
+        
         self.posterTiny = Self.generatePosterLink(
-            path: movie.posterPath ?? "",
+            baseImageURL: baseImageURL,
+            path: movie.posterPath,
             size: .w154
         )
         self.posterOriginal = Self.generatePosterLink(
-            path: movie.posterPath ?? "",
+            baseImageURL: baseImageURL,
+            path: movie.posterPath,
             size: .original
         )
     }
     
-    private static func generatePosterLink(path: String, size: MovieImageSize) -> String {
-        return "\(CommonMovieService.baseImagesURL)/\(size)/\(path)"
+    private static func generatePosterLink(
+        baseImageURL: String,
+        path: String?,
+        size: MovieImageSize
+    ) -> String {
+        return "\(baseImageURL)/\(size)\(path ?? "")"
     }
 }
 

@@ -9,6 +9,7 @@ import SwiftUI
 import Combine
 import Extensions
 import Domain
+import MoviesAPI
 
 // MARK: - MoviesListViewModel
 public final class MoviesListViewModel: ObservableObject {
@@ -19,9 +20,9 @@ public final class MoviesListViewModel: ObservableObject {
     private var currentSort: MoviesSortingType = .popularity
     
     // MARK: Public properties
-    @Published var movies: [MovieAdapter] = []
-    @Published var showError = false
-    @Published var showingSortingOption = false
+    @Published public var movies: [MovieAdapter] = []
+    @Published public var showError = false
+    @Published public var showingSortingOption = false
     public var isMorePagesAvailable = false
     
     // MARK: UseCases
@@ -29,7 +30,7 @@ public final class MoviesListViewModel: ObservableObject {
     private let navigationHandler: NavigationActionHandler
     
     // MARK: Initialization
-    init(
+    public init(
         moviesUseCase: MoviesUseCaseProtocol,
         navigationHandler: @escaping NavigationActionHandler
     ) {
@@ -108,7 +109,8 @@ private extension MoviesListViewModel {
     func handleMovies(_ response: MoviesListEntity) {
         isMorePagesAvailable = response.totalPages > response.page
         movies.append(contentsOf: response.results.compactMap {
-            MovieAdapter($0)
+            // TODO: Modify this logic to read BaseImageURL from injected object from AppEnvironment.
+            MovieAdapter($0, baseImageURL: CommonMovieService.baseImagesURL)
         })
     }
 }

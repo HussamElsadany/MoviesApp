@@ -18,14 +18,15 @@ let package = Package(
         // Dependencies declare other packages that this package depends on.
         .package(path: "../Domain"),
         .package(path: "../ImageCache"),
-        .package(path: "../MoviesAPI")
+        .package(path: "../MoviesAPI"),
+        .package(path: "../Extensions")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "Presentation",
-            dependencies: ["Domain", "ImageCache", "MoviesAPI"]),
+            dependencies: ["Domain", "ImageCache", "MoviesAPI", "Extensions"]),
         .testTarget(
             name: "PresentationTests",
             dependencies: ["Presentation"]),

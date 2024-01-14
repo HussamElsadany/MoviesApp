@@ -25,6 +25,13 @@
         "identifier" : "DataTests",
         "name" : "DataTests"
       }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..\/Packages\/Presentation",
+        "identifier" : "PresentationTests",
+        "name" : "PresentationTests"
+      }
     }
   ],
   "version" : 1
