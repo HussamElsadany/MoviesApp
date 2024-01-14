@@ -18,7 +18,8 @@ let package = Package(
         // Dependencies declare other packages that this package depends on.
         .package(path: "../MoviesAPI"),
         .package(path: "../Domain"),
-        .package(path: "../CoreNetwork")
+        .package(path: "../CoreNetwork"),
+        .package(path: "../Extensions")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -28,6 +29,6 @@ let package = Package(
             dependencies: ["MoviesAPI", "Domain", "CoreNetwork"]),
         .testTarget(
             name: "DataTests",
-            dependencies: ["Data"]),
+            dependencies: ["Data", "Domain", "CoreNetwork", "Extensions"]),
     ]
 )

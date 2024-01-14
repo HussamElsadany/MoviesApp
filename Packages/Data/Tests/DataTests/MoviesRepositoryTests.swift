@@ -1,27 +1,27 @@
 //
-//  MoviesUseCaseTests.swift
-//  
+//  MoviesRepositoryTests.swift
+//
 //
 //  Created by Hussam Elsadany on 14/01/2024.
 //
 
 import XCTest
-import Domain
-import Combine
+import Data
 import Extensions
+import Domain
 
-final class MoviesUseCaseTests: XCTestCase {
+final class MoviesRepositoryTests: XCTestCase {
     
     let cancelBag: CancelBag = .init()
     
     func testGetMovies() {
         // Arrange
-        let mockRepo = MoviesRepositoryMock()
-        let moviesUseCase = MoviesUseCase(repository: mockRepo)
+        let mockNetWork = NetWorkMock(mockedObject: MoviesListEntity.mock)
+        let moviesRepository = MoviesRepository(netWork: mockNetWork)
         
         // Act
         let expectation = XCTestExpectation(description: "Fetch movies expectation")
-        moviesUseCase.getMovies(page: 1, sortType: .popularity)
+        moviesRepository.getMovies(page: 1, sortType: .popularity)
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .finished:
@@ -41,12 +41,12 @@ final class MoviesUseCaseTests: XCTestCase {
     
     func testGetMovieDetails() {
         // Arrange
-        let mockRepo = MoviesRepositoryMock()
-        let moviesUseCase = MoviesUseCase(repository: mockRepo)
+        let mockNetWork = NetWorkMock(mockedObject: MovieEntity.mock)
+        let moviesRepository = MoviesRepository(netWork: mockNetWork)
         
         // Act
         let expectation = XCTestExpectation(description: "Fetch movie details expectation")
-        moviesUseCase.getMovieDetails(movieId: 1)
+        moviesRepository.getMovieDetails(movieId: 1)
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .finished:
