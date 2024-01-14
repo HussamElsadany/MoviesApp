@@ -33,7 +33,7 @@ To run the Movie App locally, follow these steps:
 
 ```bash
 # Clone the repository
-git clonehttps://github.com/HussamElsadany/MoviesApp.git
+git clone https://github.com/HussamElsadany/MoviesApp.git
 
 # Navigate to the project directory
 cd MovieApp
