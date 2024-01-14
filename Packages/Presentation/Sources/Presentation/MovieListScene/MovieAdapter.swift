@@ -22,8 +22,10 @@ public struct MovieAdapter: Identifiable, Hashable {
 // MARK: - Initialization from entities
 extension MovieAdapter {
     
-    /// /// Initialize adapter object from given movie entity
-    /// - Parameter movie: base entity
+    /// Initialize adapter object from given movie entity
+    /// - Parameters:
+    ///   - movie: base entity
+    ///   - baseImageURL: url for the image
     public init(
         _ movie: MovieEntity,
         baseImageURL: String
@@ -49,7 +51,7 @@ extension MovieAdapter {
         path: String?,
         size: MovieImageSize
     ) -> String {
-        return "\(baseImageURL)/\(size)\(path ?? "")"
+        return "https://\(baseImageURL)\(size)\(path ?? "")"
     }
 }
 

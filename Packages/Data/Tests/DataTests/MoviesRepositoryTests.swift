@@ -12,7 +12,7 @@ import Domain
 
 final class MoviesRepositoryTests: XCTestCase {
     
-    let cancelBag: CancelBag = .init()
+    private let cancelBag: CancelBag = .init()
     
     func testGetMovies() {
         // Arrange

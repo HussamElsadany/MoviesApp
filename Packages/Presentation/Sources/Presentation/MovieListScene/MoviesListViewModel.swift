@@ -10,6 +10,7 @@ import Combine
 import Extensions
 import Domain
 import MoviesAPI
+import AppEnvironment
 
 // MARK: - MoviesListViewModel
 public final class MoviesListViewModel: ObservableObject {
@@ -27,15 +28,18 @@ public final class MoviesListViewModel: ObservableObject {
     
     // MARK: UseCases
     private let moviesUseCase: MoviesUseCaseProtocol
+    private let environment: AppEnvironmentProtocol
     private let navigationHandler: NavigationActionHandler
     
     // MARK: Initialization
     public init(
         moviesUseCase: MoviesUseCaseProtocol,
+        environment: AppEnvironmentProtocol,
         navigationHandler: @escaping NavigationActionHandler
     ) {
         self.cancelBag = .init()
         self.moviesUseCase = moviesUseCase
+        self.environment = environment
         self.navigationHandler = navigationHandler
     }
 }
@@ -84,9 +88,9 @@ extension MoviesListViewModel {
     }
 }
 
-// MARK: - Private
-private extension MoviesListViewModel {
-    func loadMovies() {
+// MARK: - API Caller
+extension MoviesListViewModel {
+    public func loadMovies() {
         moviesUseCase
             .getMovies(
                 page: currentPage,
@@ -108,9 +112,9 @@ private extension MoviesListViewModel {
     
     func handleMovies(_ response: MoviesListEntity) {
         isMorePagesAvailable = response.totalPages > response.page
+        let imageBaseURL: String = environment.getValue(.apiImageBaseURL)
         movies.append(contentsOf: response.results.compactMap {
-            // TODO: Modify this logic to read BaseImageURL from injected object from AppEnvironment.
-            MovieAdapter($0, baseImageURL: CommonMovieService.baseImagesURL)
+            MovieAdapter($0, baseImageURL: imageBaseURL)
         })
     }
 }

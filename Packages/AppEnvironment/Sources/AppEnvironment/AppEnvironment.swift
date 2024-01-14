@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: AppEnvironment
+// MARK: - AppEnvironment
 public struct AppEnvironment {
     
     // MARK: Properties
@@ -31,7 +31,7 @@ public struct AppEnvironment {
     }
 }
 
-// MARK: AppEnvironmentProtocol
+// MARK: - AppEnvironmentProtocol
 extension AppEnvironment: AppEnvironmentProtocol {
     public var isDebug: Bool {
         name == .debug
@@ -50,4 +50,3 @@ extension AppEnvironment: AppEnvironmentProtocol {
         return value
     }
 }
-

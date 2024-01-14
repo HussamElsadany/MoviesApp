@@ -12,7 +12,7 @@ import Extensions
 
 final class MoviesUseCaseTests: XCTestCase {
     
-    let cancelBag: CancelBag = .init()
+    private let cancelBag: CancelBag = .init()
     
     func testGetMovies() {
         // Arrange

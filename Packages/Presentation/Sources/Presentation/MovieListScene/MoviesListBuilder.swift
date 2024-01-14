@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Domain
+import AppEnvironment
 
 public struct MoviesListBuilder {
     
@@ -14,10 +15,14 @@ public struct MoviesListBuilder {
     
     public static func build(
         moviesUseCase: MoviesUseCaseProtocol,
+        environment: AppEnvironmentProtocol,
         navigationHandler: @escaping MoviesListViewModel.NavigationActionHandler
     ) -> UIViewController {
-        let viewModel = MoviesListViewModel(moviesUseCase: moviesUseCase,
-                                            navigationHandler: navigationHandler)
+        let viewModel = MoviesListViewModel(
+            moviesUseCase: moviesUseCase,
+            environment: environment,
+            navigationHandler: navigationHandler
+        )
         let view = MoviesListView(viewModel: viewModel)
         return UIHostingController(rootView: view)
     }
