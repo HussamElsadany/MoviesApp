@@ -23,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC29B35A2B540A1200B77CDD /* MoviesAppTestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = MoviesAppTestPlan.xctestplan; sourceTree = "<group>"; };
 		DC76CB872B521A2000FE3C91 /* MoviesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoviesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC76CB8A2B521A2000FE3C91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC76CB8C2B521A2000FE3C91 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +56,7 @@
 		DC76CB7E2B521A2000FE3C91 = {
 			isa = PBXGroup;
 			children = (
+				DC29B35A2B540A1200B77CDD /* MoviesAppTestPlan.xctestplan */,
 				DC76CB892B521A2000FE3C91 /* MoviesApp */,
 				DC76CB882B521A2000FE3C91 /* Products */,
 				DC76CB9E2B521F3700FE3C91 /* Frameworks */,

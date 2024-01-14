@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "5293CD33-04DE-4216-9E86-D14D561D3834",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:..\/Packages\/Domain",
+        "identifier" : "DomainTests",
+        "name" : "DomainTests"
+      }
+    }
+  ],
+  "version" : 1
+}
